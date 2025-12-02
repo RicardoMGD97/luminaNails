@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contáctanos">
+    <div class="max-w-3xl mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center mb-8 text-pink-600">Hablemos</h1>
+        <p class="text-center text-gray-600 mb-12">¿Tienes dudas sobre algún curso? Escríbenos.</p>
+        
+        <div class="bg-white shadow-lg rounded-xl p-8 border border-gray-100">
+            <form 
+                action="https://formspree.io/f/movgwwro" 
+                method="POST" 
+                class="space-y-6"
+            >
+                <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - Lumina Nails Web" />
+                <input type="text" name="_gotcha" style="display:none" />
+
+
+                <div>
+                    <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+                    <input type="text" name="nombre" id="nombre" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-pink-500 focus:ring-pink-500 p-3 bg-gray-50" placeholder="Tu nombre">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                    <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-pink-500 focus:ring-pink-500 p-3 bg-gray-50" placeholder="tucorreo@ejemplo.com">
+                </div>
+                <div>
+                    <label for="mensaje" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                    <textarea name="mensaje" id="mensaje" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-pink-500 focus:ring-pink-500 p-3 bg-gray-50" placeholder="¿En qué curso estás interesada?"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-pink-500 text-white py-3 rounded-lg font-bold hover:bg-pink-600 transition">
+                    Enviar Mensaje
+                </button>
+            </form>
+            
+            <div class="mt-8 pt-8 border-t text-center">
+                <p class="text-gray-600">O escríbenos directamente a:</p>
+                <a href="mailto:LuminaNails@protonmail.com" class="text-pink-600 font-bold text-lg">LuminaNails@protonmail.com</a>
+            </div>
+        </div>
+    </div>
+</Layout>

@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CourseCard from '../components/CourseCard.astro';
+
+// Datos de tus cursos
+const courses = [
+  { title: "Manicura Rusa", desc: "Limpieza profunda y preparación perfecta.", price: "$49 USD", link: "#", color: "bg-pink-100" },
+  { title: "Esmaltado Semipermanente", desc: "Aplicación y nivelación de larga duración.", price: "$39 USD", link: "#", color: "bg-purple-100" },
+  { title: "Acrílico Nivel 1", desc: "Aprende estructura básica y control de perla.", price: "$89 USD", link: "#", color: "bg-blue-100" },
+  { title: "Esculturales Avanzadas", desc: "Técnicas coffin, stiletto y almendra sin tips.", price: "$99 USD", link: "#", color: "bg-green-100" },
+  { title: "Nail Art & Diseño", desc: "Mano alzada, trazos finos y teoría del color.", price: "$59 USD", link: "#", color: "bg-yellow-100" },
+  { title: "Polygel System", desc: "La técnica híbrida ligera y resistente.", price: "$69 USD", link: "#", color: "bg-red-100" },
+  { title: "Decoración 3D", desc: "Relieves, pedrería y encapsulados.", price: "$59 USD", link: "#", color: "bg-indigo-100" },
+  { title: "Press-On Business", desc: "Crea tu negocio de uñas postizas personalizadas.", price: "$79 USD", link: "#", color: "bg-orange-100" },
+];
+---
+
+<Layout title="Inicio">
+    <section class="bg-gradient-to-r from-pink-500 to-purple-500 text-white py-20 px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Domina el Arte de las Uñas</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Cursos online profesionales para convertir tu pasión en un negocio rentable.</p>
+        <a href="#cursos" class="bg-white text-pink-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-100 transition">Ver Cursos</a>
+    </section>
+
+    <section id="cursos" class="max-w-7xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">Nuestros Cursos Disponibles</h2>
+        <p class="text-center text-gray-600 mb-12">Selecciona el curso ideal para ti y comienza hoy mismo.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {courses.map((course) => (
+                <CourseCard 
+                    title={course.title}
+                    description={course.desc}
+                    price={course.price}
+                    stripeLink={course.link}
+                    imageClass={course.color}
+                />
+            ))}
+        </div>
+    </section>
+</Layout>
